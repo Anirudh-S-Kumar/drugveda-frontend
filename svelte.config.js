@@ -10,7 +10,10 @@ const config = {
 
 	kit: {
 		adapter: static_adapter(),
-		base: process.env.NODE_ENV === "production" ? "/sveltekit-demo/" : "",
+		paths: {
+			base: process.env.NODE_ENV === "production" ? "/sveltekit-demo/" : "",
+		}
+		
 
 			
 	}
