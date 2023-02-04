@@ -1,17 +1,21 @@
 <script lang="ts">
-    import ExpandShadowButton from "../shared/buttons/ExpandShadowButton.svelte";
-    import TabButton from "../shared/buttons/TabButton.svelte";
+    import ExpandShadowButton from "$lib/shared/buttons/ExpandShadowButton.svelte";
+    import TabButton from "$lib/shared/buttons/TabButton.svelte";
+    import { base } from "$app/paths";
+    import { createEventDispatcher } from "svelte";
+
+    const dispatch = createEventDispatcher();
 </script>
 
 <header class=" text-gray-300 body-font bg-gray-800">
     <div
         class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
-        <button
+        <button on:click={() => {dispatch("logo-clicked")}}
             class="flex title-font font-medium items-center text-gray-300 mb-4 md:mb-0"
         >
             <img
-                src="./site-assets/logo-no-background.svg"
+                src="{base}/site-assets/logo-no-background.svg"
                 alt="logo"
                 width=200
                 class=" text-white p-2"
@@ -26,13 +30,13 @@
             <TabButton>Third Link</TabButton>
         </nav>
             <div class="flex space-x-4 items-center">
-                <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="login">
+                <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="{base}/login">
                     Login</ExpandShadowButton
                 >
-                <ExpandShadowButton style="border-radius: 0.5rem">
+                <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/login">
                     Signup</ExpandShadowButton
                 >
-                <button
+                <button on:click={() => {dispatch("cart-clicked")}}
                     class="py-4 px-1 relative border-2 border-transparent text-white rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
                     aria-label="Cart"
                 >
