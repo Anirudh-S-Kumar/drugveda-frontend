@@ -4,6 +4,8 @@
     import { base } from "$app/paths";
     import { createEventDispatcher } from "svelte";
 
+    export let showLoginModal: boolean = false;
+
     const dispatch = createEventDispatcher();
 </script>
 
@@ -11,8 +13,9 @@
     <div
         class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
-        <button on:click={() => {dispatch("logo-clicked")}}
+        <a 
             class="flex title-font font-medium items-center text-gray-300 mb-4 md:mb-0"
+            href="{base}/"
         >
             <img
                 src="{base}/site-assets/logo-no-background.svg"
@@ -21,7 +24,7 @@
                 class=" text-white p-2"
             />
             <!-- <span class="ml-3 text-xl">DrugVeda</span> -->
-        </button>
+        </a>
         <nav
             class="m-auto flex flex-wrap items-center text-base justify-between"
         >
