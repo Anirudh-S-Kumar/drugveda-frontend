@@ -4,12 +4,12 @@
     import { base } from "$app/paths";
     import { createEventDispatcher } from "svelte";
 
-    export let showLoginModal: boolean = false;
+    // export let showLoginModal: boolean = false;
 
     const dispatch = createEventDispatcher();
 </script>
 
-<header class=" text-gray-300 body-font bg-gray-800">
+<header class=" text-gray-300 body-font bg-gray-800 shadow-xl">
     <div
         class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
@@ -28,7 +28,7 @@
         <nav
             class="m-auto flex flex-wrap items-center text-base justify-between"
         >
-            <TabButton>First Link</TabButton>
+            <TabButton href="{base}/categories">First Link</TabButton>
             <TabButton>Second Link</TabButton>  
             <TabButton>Third Link</TabButton>
         </nav>
@@ -66,4 +66,5 @@
                 </button>
             </div>
     </div>
+    <!-- <hr class="h-px border-0 bg-gray-700 shadow-xl"> -->
 </header>
