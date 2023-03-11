@@ -7,8 +7,8 @@
 <div class="w-full max-w-[1200px] mx-auto mt-10">
   <div class="grid grid-cols-3 gap-6">
 
-      <CategoryCard/>
-        <CategoryCard/>
+      <CategoryCard name="ABC"/>
+        <CategoryCard />
         <CategoryCard/>
         <CategoryCard/>
         <CategoryCard/>

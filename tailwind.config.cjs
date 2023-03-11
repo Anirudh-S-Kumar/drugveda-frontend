@@ -4,5 +4,11 @@ module.exports = {
   theme: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('flowbite/plugin'),
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
+    
+
+  ],
 }

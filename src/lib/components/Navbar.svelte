@@ -28,8 +28,8 @@
         <nav
             class="m-auto flex flex-wrap items-center text-base justify-between"
         >
-            <TabButton href="{base}/categories">First Link</TabButton>
-            <TabButton>Second Link</TabButton>  
+            <TabButton href="{base}/categories">All Categories</TabButton>
+            <TabButton href="{base}/products">All products</TabButton>  
             <TabButton>Third Link</TabButton>
         </nav>
             <div class="flex space-x-4 items-center">
