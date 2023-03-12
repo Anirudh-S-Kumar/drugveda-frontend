@@ -12,13 +12,23 @@
     </div>
 
 
-    <div style="overflow-y: scroll; height:80vh; padding: 30px">
+    <div >
         <TopBar />
         
-        <div class="w-full max-w-[1200px] mx-auto mt-10">
+        <div class="w-full mt-10">
             <div class="grid grid-cols-3 gap-6">
           
                 <CategoryCard name="ABC"/>
+                  <CategoryCard />
+                  <CategoryCard/>
+                  <CategoryCard/>
+                  <CategoryCard/>
+                  <CategoryCard/> 
+                  <CategoryCard />
+                  <CategoryCard/>
+                  <CategoryCard/>
+                  <CategoryCard/>
+                  <CategoryCard/> 
                   <CategoryCard />
                   <CategoryCard/>
                   <CategoryCard/>

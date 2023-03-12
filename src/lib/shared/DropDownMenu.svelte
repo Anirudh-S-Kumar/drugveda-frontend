@@ -1,5 +1,14 @@
 <script lang="ts">
-    let listItems = [
+
+    
+
+    interface ListItem {
+        name: string;
+        href: string;
+    }
+
+    let title: string = "Sort by";
+    let listItems: ListItem[] = [
         {
             name: "A - Z",
             href: "#",
@@ -25,7 +34,7 @@
 	class="text-white bg-teal-500 hover:bg-teal-600 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-4 py-2.5 text-center inline-flex items-center "
 	type="button"
 >
-	Sort by <svg
+	{title} <svg
 		class="w-4 h-4 ml-2"
 		aria-hidden="true"
 		fill="none"
