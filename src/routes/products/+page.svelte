@@ -1,5 +1,6 @@
 <script lang="ts">
     import CategoryCard from "$lib/shared/cards/CategoryCard.svelte";
+    import ProductCard from "$lib/shared/cards/ProductCard.svelte";
     import FilterPanel from "$lib/components/FilterPanel.svelte";
     import TopBar from "$lib/components/TopBar.svelte";
 
@@ -18,27 +19,20 @@
         <div class="w-full mt-10">
             <div class="grid grid-cols-3 gap-6">
           
-                <CategoryCard name="ABC"/>
-                  <CategoryCard />
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/> 
-                  <CategoryCard />
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/> 
-                  <CategoryCard />
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/> 
-                  <CategoryCard />
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/>
-                  <CategoryCard/> 
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
+                <ProductCard />
             </div>
           </div>
     </div>
