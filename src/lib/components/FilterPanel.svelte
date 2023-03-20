@@ -1,6 +1,6 @@
 <script lang="ts">
-    import RadioSelect from "$lib/shared/RadioSelect.svelte";
-    import SearchList from "$lib/shared/SearchList.svelte";
+    import RadioSelect from "$lib/misc/RadioSelect.svelte";
+    import SearchList from "$lib/misc/SearchList.svelte";
 </script>
 
 
