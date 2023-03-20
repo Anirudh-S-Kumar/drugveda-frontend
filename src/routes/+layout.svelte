@@ -7,7 +7,7 @@ import "flowbite/dist/flowbite.css";
 
 </script>
 
-<!-- <Navbar/> -->
+<Navbar/>
 
-<Navbar2/>
+<!-- <Navbar2/> -->
 <slot></slot>
