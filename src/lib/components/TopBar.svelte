@@ -1,5 +1,5 @@
 <script lang="ts">
-    import DropDownMenu from "$lib/shared/DropDownMenu.svelte";
+    import DropDownMenu from "$lib/shared/menus/DropDownMenu.svelte";
 
 </script>
 
