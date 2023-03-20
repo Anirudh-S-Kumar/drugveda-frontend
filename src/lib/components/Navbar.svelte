@@ -66,5 +66,5 @@
                 </button>
             </div>
     </div>
-    <!-- <hr class="h-px border-0 bg-gray-700 shadow-xl"> -->
+    <hr class="h-px bg-gray-700 border-gray-700 shadow-xl">
 </header>

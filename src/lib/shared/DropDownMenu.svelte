@@ -25,6 +25,14 @@
             name: "Price : HIgh to Low",
             href: "#",
         },
+        {
+            name: "Rating: Low to High",
+            href: "#",
+        },
+        {
+            name: "Rating: High to Low",
+            href: "#",
+        },
     ];
 </script>
 

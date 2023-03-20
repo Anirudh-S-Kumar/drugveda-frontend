@@ -17,7 +17,7 @@
         <TopBar />
         
         <div class="w-full mt-10">
-            <div class="grid grid-cols-3 gap-6">
+            <div class="grid grid-cols-3 gap-6 mr-20">
           
                 <ProductCard />
                 <ProductCard />
@@ -34,6 +34,6 @@
                 <ProductCard />
                 <ProductCard />
             </div>
-          </div>
+        </div>
     </div>
 </div>

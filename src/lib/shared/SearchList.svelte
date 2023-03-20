@@ -15,6 +15,7 @@
 	]);
 
 	export let term = writable('');
+    export let heading: string = "Brands"
 
 	let searchVal: string = '';
 
@@ -26,6 +27,9 @@
 		});
 	});
 </script>
+
+
+<h3 class="m-4 text-xl font-semibold text-white">{heading}</h3>
 
 <div class="relative w-full mb-5 ">
 	<div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
