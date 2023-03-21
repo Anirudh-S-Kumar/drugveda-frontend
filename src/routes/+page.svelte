@@ -1,8 +1,10 @@
 <script lang="ts">
     import { base } from "$app/paths";
+	import CartPage from "$lib/components/CartPage.svelte";
 	import ProductPage from "$lib/components/ProductPage.svelte";
     
 
 </script>
 
-<ProductPage />
+<!-- <ProductPage /> -->
+<CartPage />

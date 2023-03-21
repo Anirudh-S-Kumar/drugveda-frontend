@@ -1,6 +1,7 @@
 <script lang="ts">
-	import DefaultButton from '$lib/shared/buttons/DefaultButton.svelte';
+	import ProductButton from '$lib/shared/buttons/ProductButton.svelte';
     import StarRatting from '@ernane/svelte-star-rating';
+
 
 	const config = {
 		readOnly: true,
@@ -51,11 +52,11 @@
 				</div>
 				<div class="flex">
 					<span class="title-font font-medium text-2xl text-white">$58.00</span>
-					<DefaultButton name="Buy Now" color="teal"/>
+					<ProductButton name="Buy Now" color="teal"/>
 					<button
 						class="inline-flex items-center justify-center ml-4"
 					>
-                    <DefaultButton name="Add to Cart" color="teal_outline"/>
+                    <ProductButton name="Add to Cart" color="teal_outline"/>
 					</button>
 				</div>
 			</div>
