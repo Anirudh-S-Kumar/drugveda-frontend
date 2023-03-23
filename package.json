@@ -15,6 +15,7 @@
 	"devDependencies": {
 		"@ernane/svelte-star-rating": "^1.1.2",
 		"@poppanator/sveltekit-svg": "^2.1.2",
+		"@skeletonlabs/skeleton": "^1.0.0",
 		"@sveltejs/adapter-auto": "^1.0.0",
 		"@sveltejs/adapter-static": "^1.0.5",
 		"@sveltejs/kit": "^1.0.0",
