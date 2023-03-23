@@ -1,5 +1,5 @@
 <script lang="ts">
-
+    import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader, Button, Chevron } from 'flowbite-svelte'
     
 
     interface ListItem {
@@ -35,7 +35,7 @@
         },
     ];
 </script>
-
+<!-- 
 <button
 	id="dropdownDefaultButton"
 	data-dropdown-toggle="dropdown"
@@ -57,7 +57,6 @@
 		/></svg
 	></button
 >
-<!-- Dropdown menu -->
 <div
 	id="dropdown"
 	class="z-10 hidden divide-y bg-gray-800 divide-gray-100 rounded-lg shadow w-44  text-white hover:text-white"
@@ -73,4 +72,11 @@
         </li>
         {/each}
 	</ul>
-</div>
+</div> -->
+
+<Button color="primary"><Chevron >Sort By</Chevron></Button>
+<Dropdown>
+    {#each listItems as item}
+    <DropdownItem href="{item.href}">{item.name}</DropdownItem>
+    {/each}
+</Dropdown>

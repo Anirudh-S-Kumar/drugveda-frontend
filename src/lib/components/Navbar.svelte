@@ -39,9 +39,13 @@
                 <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/login">
                     Signup</ExpandShadowButton
                 >
-                <button on:click={() => {dispatch("cart-clicked")}}
+                <!-- <button
                     class="py-4 px-1 relative border-2 border-transparent text-white rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
-                    aria-label="Cart"
+                    id="cartButton"
+                    type="button"
+                    data-drawer-target="cart-drawer"
+                    data-drawer-show="cart-drawer"
+                    aria-controls="cart-drawer"
                 >
                     <svg
                         class="h-10 w-10"
@@ -63,7 +67,7 @@
                             1
                         </div>
                     </span>
-                </button>
+                </button> -->
             </div>
     </div>
     <hr class="h-px bg-gray-700 border-gray-700 shadow-xl">

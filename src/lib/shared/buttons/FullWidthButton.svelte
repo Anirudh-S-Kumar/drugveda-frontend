@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let name: string = 'Button';
     export let color:string = 'teal';
+    export let style: string = '';
 
     const colorVariants = {
     'teal': ' w-1/2 flex items-center justify-center rounded-md border border-transparent bg-teal-500 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-600 hover:text-gray-200',
@@ -25,14 +26,7 @@
 
 
 
-<!-- <div class="mt-6">
-    <a
-        href="#"
-        class="flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-700 hover:text-white"
-        >Checkout</a
-    >
-</div> -->
-<button class={currentColor}>
+<button class={currentColor} style={style}>
     {name}
 </button>
 

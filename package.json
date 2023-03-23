@@ -28,7 +28,6 @@
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"flowbite": "^1.6.4",
-		"flowbite-svelte": "^0.30.6",
 		"postcss": "^8.4.21",
 		"prettier": "^2.8.0",
 		"prettier-plugin-svelte": "^2.8.1",
@@ -41,8 +40,12 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@popperjs/core": "^2.11.6",
+		"@preline/overlay": "^1.4.0",
+		"classnames": "^2.3.2",
 		"firebase": "^9.17.2",
 		"firebase-auth": "^0.1.2",
+		"flowbite-svelte": "^0.34.2",
 		"svelte-range-slider-pips": "^2.1.1"
 	}
 }

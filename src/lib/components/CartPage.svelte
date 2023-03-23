@@ -1,17 +1,10 @@
-<!--
-    Background backdrop, show/hide based on slide-over state.
-
-    Entering: "ease-in-out duration-500"
-      From: "opacity-0"
-      To: "opacity-100"
-    Leaving: "ease-in-out duration-500"
-      From: "opacity-100"
-      To: "opacity-0"
-  -->
-  <!-- <div class="fixed inset-0 bg-gray-900 bg-opacity-75 transition-opacity"></div> -->
+<script>
+	import FullWidthButton from '$lib/shared/buttons/FullWidthButton.svelte';
+	import QtyInput from '$lib/misc/QtyInput.svelte';
+</script>
 
 
-<div class="fixed inset-0 overflow-hidden">
+<div class="fixed inset-0 overflow-hidden" id="cart-drawer">
 	<div class="absolute inset-0 overflow-hidden">
 		<div class="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
 			<!--
@@ -71,7 +64,7 @@
 												<p class="mt-1 text-sm text-gray-400">Salmon</p>
 											</div>
 											<div class="flex flex-1 items-end justify-between text-sm">
-												<p class="text-gray-400">Qty 1</p>
+												<QtyInput />
 
 												<div class="flex">
 													<button
@@ -128,18 +121,14 @@
 							<p>Subtotal</p>
 							<p>$262.00</p>
 						</div>
-						<p class="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
+						<p class="mt-0.5 text-sm text-gray-400">Shipping and taxes calculated at checkout.</p>
 						<div class="mt-6">
-							<a
-								href="#"
-								class="flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-700 hover:text-white"
-								>Checkout</a
-							>
+							<FullWidthButton name="Checkout" style="width: 100%" />
 						</div>
 						<div class="mt-6 flex justify-center text-center text-sm text-gray-500">
 							<p>
 								or
-								<button type="button" class="font-medium text-teal-600 hover:text-teal-500">
+								<button type="button" class="font-medium text-teal-500 hover:text-teal-400">
 									Continue Shopping
 									<span aria-hidden="true"> &rarr;</span>
 								</button>
