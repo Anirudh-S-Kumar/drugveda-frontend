@@ -13,17 +13,19 @@
 </script>
 
 <h3 class="m-4 mb-6 text-xl font-semibold text-white">{name}</h3>
-<div class="mb-5">
+<!-- <div class="mb-5"> -->
 	<RangeSlider
-		range
+		
 		pips
 		float
-		{min}
-		{max}
+		min={min}
+		max={max}
 		first="label"
 		last="label"
 		--range-handle-focus="#2dd4bf"
 		--range-handle="#2dd4bf"
 		bind:values
 	/>
-</div>
+
+
+<!-- </div> -->

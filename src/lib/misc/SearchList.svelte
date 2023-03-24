@@ -1,18 +1,8 @@
 <script lang="ts">
 	import { writable, derived } from 'svelte/store';
 
-	export let options = writable([
-		'Leexo',
-		'Avamm',
-		'Mynte',
-		'Buzzdog',
-		'Avamm',
-		'Rhycero',
-		'Photolist',
-		'Yakijo',
-		'Buzzbean',
-		'Feedfire'
-	]);
+	export let brands: string[] = []
+	export let options = writable(brands);
 
 	export let term = writable('');
     export let heading: string = "Brands"
