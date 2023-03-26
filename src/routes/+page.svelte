@@ -14,5 +14,4 @@
 <!-- <CartDrawer /> -->
 
 <!-- <div class="bg-primary-600">  -->
-<FullWidthButton name=""></FullWidthButton>
 

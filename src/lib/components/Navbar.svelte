@@ -30,7 +30,7 @@
         >
             <TabButton href="{base}/categories">All Categories</TabButton>
             <TabButton href="{base}/products">All products</TabButton>  
-            <TabButton>Third Link</TabButton>
+            <TabButton href="{base}/subpage">Third Link</TabButton>
         </nav>
             <div class="flex space-x-4 items-center">
                 <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="{base}/login">
