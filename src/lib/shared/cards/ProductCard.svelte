@@ -2,8 +2,10 @@
 	export let name: string = 'Product Name Product Name Product Name Product Name';
 	export let price: number = 35.13;
 	export let image: string = 'https://dummyimage.com/310x192';
+	export let link: string = '#';
 </script>
 
+<a href={link}>
 <div class="lg:w-1/6 md:w-1/6 p-4 w-full ">
 	<div class="relative h-64 ">
 		<div class="absolute inset-0 bg-white flex items-center justify-center ">
@@ -15,3 +17,4 @@
 		<p class="mt-1">₹{price}</p>
 	</div>
 </div>
+</a>

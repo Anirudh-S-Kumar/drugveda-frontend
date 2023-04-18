@@ -1,11 +1,13 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAuth, setPersistence, inMemoryPersistence } from "firebase/auth";
+import { PUBLIC_API_URL } from '$env/static/public';
+import { SECRET_API_KEY } from '$env/static/private';
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAWnzUlv7mHT5rMomxK4r6TrADqxwshy98",
-  authDomain: "drugveda-7a7c1.firebaseapp.com",
+  apiKey: APP_ID,
+  authDomain: AUTH_DOMAIN,
   projectId: "drugveda-7a7c1",
   storageBucket: "drugveda-7a7c1.appspot.com",
   messagingSenderId: "428133486444",

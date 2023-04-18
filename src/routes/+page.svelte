@@ -8,7 +8,7 @@
 	
 </script>
 
-<!-- <ProductPage /> -->
+<ProductPage />
 <!-- <CartPage /> -->
 
 <!-- <CartDrawer /> -->

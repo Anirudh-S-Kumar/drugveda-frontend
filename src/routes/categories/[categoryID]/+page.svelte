@@ -31,27 +31,11 @@
                     {#each subcats as subcat}
                         {#each subcat.products as product}
                             <a href="#top">
-                            <ProductCard name={product.name} price={product.price} image={`${product.image}`}/>
+                            <ProductCard name={product.name} price={product.price} image={`${product.image}`} link="/product/{product.name}?id={product.id}"/>
                             </a>
                         {/each}
                         
                     {/each}
-
-
-                    <!-- <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard /> -->
                 </div>
             </div>
         </div>
