@@ -1,6 +1,8 @@
-<script>
+<script lang="ts">
 	import FullWidthButton from '$lib/shared/buttons/FullWidthButton.svelte';
 	import QtyInput from '$lib/misc/QtyInput.svelte';
+
+	let qty: number = 1;
 </script>
 
 
@@ -41,7 +43,7 @@
 
 						<div class="mt-8">
 							<div class="flow-root">
-								<ul role="list" class="-my-6 divide-y divide-gray-200">
+								<ul class="-my-6 divide-y divide-gray-200">
 									<li class="flex py-6">
 										<div
 											class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200"
@@ -64,7 +66,7 @@
 												<p class="mt-1 text-sm text-gray-400">Salmon</p>
 											</div>
 											<div class="flex flex-1 items-end justify-between text-sm">
-												<QtyInput />
+												<QtyInput qty={qty}/>
 
 												<div class="flex">
 													<button

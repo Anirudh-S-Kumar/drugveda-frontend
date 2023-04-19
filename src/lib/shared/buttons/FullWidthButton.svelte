@@ -26,7 +26,7 @@
 
 
 
-<button class={currentColor} style={style}>
+<button class={currentColor} style={style} on:click>
     {name}
 </button>
 

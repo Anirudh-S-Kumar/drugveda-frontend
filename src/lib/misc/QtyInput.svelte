@@ -4,6 +4,15 @@
 
 
     function startChange(inc: boolean = true){
+        if (qty < 99 && inc){
+                ++qty;
+            }
+            else if (qty > 1 && !inc){
+                --qty;
+            }
+          
+        setInterval(() => {}, 100);
+
         counter = setInterval(() => {
             if (qty < 99 && inc){
                 ++qty;
