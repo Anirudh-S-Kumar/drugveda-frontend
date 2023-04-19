@@ -1,11 +1,14 @@
 <script>
     import CartCard from '$lib/shared/cards/CartCard.svelte';
-import { fly } from 'svelte/transition';
+    import { fly, fade} from 'svelte/transition';
     export let show = false;
 </script>
 
 {#if show}
-  <nav transition:fly={{x: 480, opacity: 1}}>
+<div class="fixed top-0 left-0 right-0 bottom-0 bg-black opacity-25" transition:fade={{duration: 200}}>
+</div>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <nav transition:fly={{x: 480, opacity: 1, duration: 200}}>
 
     <div class="flex items-start justify-between">
         <h2 class="text-lg font-medium text-white" id="slide-over-title">Shopping cart</h2>
@@ -39,9 +42,11 @@ nav {
   right: 0;
   height: 100%;
   padding: 2rem 1rem 0.6rem;
-  border-left: 1px solid #aaa;
+  border-left: 1px solid #111;
+  filter: drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
   background: #000;
   overflow-y: auto;
+  border-radius: 0.75rem;
   width: 30rem;
 }
 </style>

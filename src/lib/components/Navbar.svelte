@@ -23,7 +23,6 @@
                 width=200
                 class=" text-white p-2"
             />
-            <!-- <span class="ml-3 text-xl">DrugVeda</span> -->
         </a>
         <nav
             class="m-auto flex flex-wrap items-center text-base justify-between"
@@ -39,13 +38,10 @@
                 <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/login">
                     Signup</ExpandShadowButton
                 >
-                <!-- <button
+                <button
                     class="py-4 px-1 relative border-2 border-transparent text-white rounded-full hover:text-gray-400 focus:outline-none focus:text-gray-500 transition duration-150 ease-in-out"
-                    id="cartButton"
                     type="button"
-                    data-drawer-target="cart-drawer"
-                    data-drawer-show="cart-drawer"
-                    aria-controls="cart-drawer"
+
                 >
                     <svg
                         class="h-10 w-10"
@@ -67,7 +63,7 @@
                             1
                         </div>
                     </span>
-                </button> -->
+                </button>
             </div>
     </div>
     <hr class="h-px bg-gray-700 border-gray-700 shadow-xl">

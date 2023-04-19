@@ -17,6 +17,7 @@
   class="{defaultClass}"
   href="{href}"
   style="{style}"
+  on:click
 >
   <slot></slot>
 </a>

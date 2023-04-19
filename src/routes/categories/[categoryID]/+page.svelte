@@ -24,7 +24,7 @@
     
     
         <div >
-            <TopBar />
+            <TopBar category="123"/>
             
             <div class="w-full mt-10">
                 <div class="grid grid-cols-3 gap-6 mr-20">

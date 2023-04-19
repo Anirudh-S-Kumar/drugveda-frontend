@@ -1,12 +1,9 @@
 <script lang="ts">
     import { Dropdown, DropdownItem, DropdownDivider, DropdownHeader, Button, Chevron } from 'flowbite-svelte'
-    
+    import type { ListItem } from '$lib/interfaces';
     let menuOpen = false;
 
-    interface ListItem {
-        name: string;
-        href: string;
-    }
+
 
     let title: string = "Sort by";
     let listItems: ListItem[] = [

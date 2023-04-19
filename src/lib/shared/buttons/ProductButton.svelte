@@ -23,7 +23,7 @@
 
 </script>
 
-<button class={currentColor}>
+<button class={currentColor} on:click>
     {name}
 </button>
 
