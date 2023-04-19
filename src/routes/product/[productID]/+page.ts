@@ -10,6 +10,7 @@ export async function load({ fetch, params, url} ) {
     }
 
     return {
+        category: params,
         product: fetchProduct(id),
         
     }

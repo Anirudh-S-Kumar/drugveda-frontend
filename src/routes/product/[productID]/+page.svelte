@@ -5,6 +5,9 @@
     import ProductButton from '$lib/shared/buttons/ProductButton.svelte';
     import StarRating from '@ernane/svelte-star-rating';
 
+	import { onMount } from 'svelte';
+    import cartStore from '$lib/cart';
+
     export let data;
 
     let product = data.product.data;
@@ -30,7 +33,7 @@
 
 </script>
 
-<div class="text-gray-400 bg-gray-900 body-font overflow-hidden flex flex-col h-screen">
+<div class="text-gray-400 bg-gray-900 body-font overflow-hidden flex flex-col">
 	<div class="container px-5 py-24 mx-auto">
 		<div class="lg:w-4/5 mx-auto flex ">
             <div class="lg:w-1/6 md:w-1/6 p-4 w-full ">
