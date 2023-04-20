@@ -65,6 +65,3 @@
 <slot></slot>   
 
 <CartPage bind:show={sidebar_show}/>
-<!-- <CartPage/> -->
-
-<!-- <Navbar2/> -->
