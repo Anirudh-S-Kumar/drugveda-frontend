@@ -44,15 +44,15 @@
         <nav
             class="m-auto flex flex-wrap items-center text-base justify-between"
         >
-            <TabButton href="{base}/categories">All Categories</TabButton>
-            <TabButton href="{base}/products">All products</TabButton>  
-            <TabButton href="{base}/subpage">Third Link</TabButton>
+            <TabButton href="{base}/categories">Products</TabButton>
+            <!-- <TabButton href="{base}/products">All products</TabButton>   -->
+            <TabButton href="{base}/labtests">Lab Tests</TabButton>
         </nav>
             <div class="flex space-x-4 items-center">
                 <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="{base}/login">
                     Login</ExpandShadowButton
                 >
-                <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/login">
+                <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/signup">
                     Signup</ExpandShadowButton
                 >
                 <CartButton on:click={() => {sidebar_show = !sidebar_show}} qty={totalQty}/>

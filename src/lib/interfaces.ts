@@ -15,3 +15,11 @@ export interface CartItem {
     quantity: number;
     image: string;
 }
+
+export interface LabTest {
+    id: string;
+    name: string;
+    price: number;
+    quantity: number;
+    appointment: string;
+}

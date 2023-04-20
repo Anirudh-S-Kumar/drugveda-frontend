@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
-    import Checkout from "$lib/components/Checkout.svelte";
+    import ProductCheckout from "$lib/components/ProductCheckout.svelte";
     import { onMount } from "svelte";
     import cartStore from "$lib/cart";
     import jwtStore from "$lib/jwt";
@@ -36,4 +36,4 @@
     
 </script>
 
-<Checkout cart={cart}/>
+<ProductCheckout cart={cart}/>
