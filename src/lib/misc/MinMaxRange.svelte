@@ -15,7 +15,6 @@
 <h3 class="m-4 mb-6 text-xl font-semibold text-white">{name}</h3>
 <!-- <div class="mb-5"> -->
 	<RangeSlider
-		
 		pips
 		float
 		min={min}
@@ -26,6 +25,5 @@
 		--range-handle="#2dd4bf"
 		bind:values
 	/>
-
 
 <!-- </div> -->

@@ -1,6 +1,7 @@
 <script lang="ts">
     import QtyInput from "../../misc/QtyInput.svelte";
     import { createEventDispatcher } from "svelte";
+    import type { CartItem } from "../../interfaces.js";
 
     const dispatch = createEventDispatcher();
 
@@ -8,17 +9,16 @@
     export let price: number = 1;
     export let qty: number = 1;
     export let pid: string = '';
+    export let image: string = '';
 </script>
 
 <li class="flex py-6">
-    <div
-        class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200"
-    >
-        <img
-            src="https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg"
-            alt="Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt."
-            class="h-full w-full object-cover object-center"
-        />
+    <div class="lg:w-1/12 md:w-1/6 w-32">
+        <div class="relative h-24">
+            <div class="absolute inset-0 bg-white flex items-center justify-center ">
+                <img src={image} alt="{name}" class="h-full w-full object-contain align-middle " />
+            </div>
+        </div>
     </div>
 
     <div class="ml-4 flex flex-1 flex-col">
@@ -31,7 +31,7 @@
             </div>
         </div>
         <div class="flex flex-1 items-end justify-between text-sm">
-            <QtyInput qty={qty} />
+            <QtyInput qty={qty} pid={pid} />
 
             <div class="flex">
                 <button

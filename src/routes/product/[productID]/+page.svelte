@@ -1,16 +1,49 @@
 <script lang="ts">
-    import FilterPanel from '$lib/components/FilterPanel.svelte';
-    import TopBar from '$lib/components/TopBar.svelte';
-    import ProductCard from '$lib/shared/cards/ProductCard.svelte';
     import ProductButton from '$lib/shared/buttons/ProductButton.svelte';
     import StarRating from '@ernane/svelte-star-rating';
-
 	import { onMount } from 'svelte';
     import cartStore from '$lib/cart';
+	import type { CartItem } from '$lib/interfaces.js';
+
 
     export let data;
-
     let product = data.product.data;
+
+	let cart: CartItem[] = [];
+	onMount(() => {
+		cartStore.subscribe((value) => {
+			cart = value;
+		});
+	});
+
+	function addToCart() {
+		console.log("Adding to cart")
+		// check if item already in cart
+		let item = cart.find((item) => item.pid === data.product.data.id);
+
+		// update if item already in cart
+		if (item) {
+			item.quantity += 1;
+			cartStore.set(cart);
+		} else {
+			// add new item to cart
+
+			let newItem: CartItem = {
+				pid: data.product.data.id,
+				name: data.product.data.name,
+				quantity: 1,
+				price: data.product.data.price,
+				image: data.product.data.image
+			};
+			cartStore.update((cart) => [
+				...cart,
+				newItem
+			]);
+		}
+
+		console.log(cart);
+	}
+
 
 	const config = {
 		readOnly: true,
@@ -33,9 +66,16 @@
 
 </script>
 
-<div class="text-gray-400 bg-gray-900 body-font overflow-hidden flex flex-col">
-	<div class="container px-5 py-24 mx-auto">
-		<div class="lg:w-4/5 mx-auto flex ">
+<!-- making the product page full screen -->
+<style>
+	.container {
+		height: 100vh;
+	}
+</style>
+
+<div class="text-gray-400 bg-gray-900 body-font flex flex-col relative w-full min-h-screen">
+	<div class="container px-5 py-24 mx-auto bg-inherit">
+		<div class="lg:w-4/5 mx-auto flex bg-inherit">
             <div class="lg:w-1/6 md:w-1/6 p-4 w-full ">
                 <div class="relative h-96 ">
                     <div class="absolute inset-0 bg-white flex items-center justify-center ">
@@ -65,7 +105,7 @@
 					<button
 						class="inline-flex items-center justify-center ml-4"
 					>
-                    <ProductButton name="Add to Cart" color="teal_outline"/>
+                    <ProductButton name="Add to Cart" color="teal_outline" on:click={() => addToCart()}/>
 					</button>
 				</div>
 			</div>

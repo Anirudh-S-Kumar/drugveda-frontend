@@ -1,5 +1,17 @@
 <script lang="ts">
+    import { onMount } from 'svelte';
+    import cartStore from '$lib/cart';
+    import type { CartItem } from '$lib/interfaces';
+
+    let cart: CartItem[] = [];
+    onMount(() => {
+        cartStore.subscribe((value) => {
+            cart = value;
+        });
+    });
+
     export let qty: number = 1;
+    export let pid: string = '';
     let counter: any;
 
 
@@ -25,6 +37,13 @@
 
     function stopChange(){
         clearInterval(counter);
+        // edit the qty in the cart
+        let item: CartItem | undefined = cart.find((item) => item.pid === pid);
+        if (item) {
+            item.quantity = qty;
+            cartStore.set(cart);
+        }
+
     }
 </script>
 

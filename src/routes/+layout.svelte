@@ -1,21 +1,32 @@
 <script lang="ts">
-    import Navbar from "$lib/components/Navbar.svelte";
     import "../app.postcss";
     import "flowbite/dist/flowbite.css";
-	import Navbar2 from "$lib/components/Navbar2.svelte";
-    import CartPage2 from "$lib/components/CartPage2.svelte";
+	import CartPage from "$lib/components/CartPage.svelte";
     import ExpandShadowButton from "$lib/shared/buttons/ExpandShadowButton.svelte";
     import TabButton from "$lib/shared/buttons/TabButton.svelte";
     import { base } from "$app/paths";
 	import CartButton from "$lib/shared/buttons/CartButton.svelte";
+    import cartStore from "$lib/cart";
+    import { onMount } from "svelte";
+    import type { CartItem } from "$lib/interfaces.js";
+    
+    let cart: CartItem[] = [];
 
+    onMount(() => {
+        cartStore.subscribe((value) => {
+            cart = value;
+        });
+    });
+
+    let totalQty: number = 0;
+    $: totalQty = cart.reduce((acc, item) => acc + item.quantity, 0);
 
     let sidebar_show: boolean;
     $: sidebar_show = false;
 
 </script>
 
-<header class=" text-gray-300 body-font bg-gray-800 shadow-xl">
+<header class=" text-gray-300 body-font bg-gray-800 shadow-xl ">
     <div
         class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
@@ -44,14 +55,16 @@
                 <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/login">
                     Signup</ExpandShadowButton
                 >
-                <CartButton on:click={() => {sidebar_show = !sidebar_show}} qty={1}/>
+                <CartButton on:click={() => {sidebar_show = !sidebar_show}} qty={totalQty}/>
             </div>
     </div>
     <hr class="h-px bg-gray-700 border-gray-700 shadow-xl">
+    
 </header>
 
+<slot></slot>   
 
-<CartPage2 bind:show={sidebar_show}/>
+<CartPage bind:show={sidebar_show}/>
+<!-- <CartPage/> -->
 
 <!-- <Navbar2/> -->
-<slot></slot>
