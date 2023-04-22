@@ -30,33 +30,4 @@
             {/each}
         </div>
     </div>
-
-    <div style="display: flex; flex-direction: column; width: 30rem" class="mt-12 mr-5">
-        
-        <h1 class="text-2xl font-medium text-gray-400 tracking-tight">Order Summary</h1>
-
-        <hr class="h-px mt-5 mb-10 bg-gray-500 border-0 mr-5">
-        {#if cartTests.length == 0}
-            <p class="text-gray-400">No tests added to cart</p>
-        {/if}
-
-        {#each cartTests as test}
-            <div class="flex justify-between">
-                <p class="text-gray-400">{test.name}(x{test.quantity})</p>
-                <p class="text-gray-400">₹{test.price * test.quantity}</p>
-            </div>
-        {/each}
-
-        {#if cartTests.length > 0}
-            <hr class="h-px mt-5 mb-3 bg-gray-500 border-0 mr-5">
-            <div class="flex justify-between mb-7">
-                <p class="text-gray-400">Total</p>
-                <p class="text-gray-400">₹{cartTests.reduce((acc, test) => acc + test.price * test.quantity, 0)}
-                </p>
-            </div>
-            <DefaultButton >
-                <a href="/checkout">Proceed to Checkout</a>
-            </DefaultButton>
-        {/if}
-    </div>
 </div>

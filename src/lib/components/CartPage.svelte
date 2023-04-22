@@ -77,7 +77,7 @@
 					<p class="mt-0.5 text-sm text-gray-400">Shipping and taxes calculated at checkout.</p>
 					<div class="mt-6">
 						<a
-							href="/checkout"
+							href="/checkout/product?from=product"
 							class="flex items-center justify-center rounded-md border border-transparent bg-teal-600 px-6 py-3 text-base font-medium text-white shadow-sm hover:bg-teal-700"
 							on:click={() => {
 								show = false;

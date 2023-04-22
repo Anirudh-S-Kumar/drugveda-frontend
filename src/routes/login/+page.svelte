@@ -1,6 +1,18 @@
 <script lang='ts'>
 	import FullWidthButton from "$lib/shared/buttons/FullWidthButton.svelte";
-
+	import { PUBLIC_API_URL } from "$env/static/public";
+	import jwtStore from "$lib/jwt";
+	import { onMount } from "svelte";
+	
+	let jwt: string = '';
+	onMount(() => {
+		jwtStore.subscribe((value) => {
+			jwt = value;
+		});
+		if (jwt != '') {
+			window.location.href = '/checkout/product';
+		}
+	});
 
 	let email:string = '';
 	let password:string = '';
@@ -9,27 +21,27 @@
 	let noMatch:boolean = false;
 	
 
-	// async function formSubmit(e: any) {
-	// 	if (register && password == confirmPassword){
-	// 		try {
-	// 			await authHandler.signUp(email, password);
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 		}		
-	// 	}
-		
-	// 	else{
-	// 		try {
-	// 			await authHandler.login(email, password);
-	// 		} catch (error) {
-	// 			console.log(error);
-	// 		}
-	// 	}
-
-	// 	e.target.reset();
-		
-
-	// }
+	async function login(email: string, password: string) {
+		let role = 'customer';
+		let res = await fetch(`${PUBLIC_API_URL}/login`, {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				email,
+				password
+			})
+		});
+		let data = await res.json();
+		console.log(data.token);
+		if (data.status === 'success' && data.token != null) {
+			jwt = data.token;
+			jwtStore.set(jwt);
+		} else {
+			alert('Invalid credentials');
+		}
+	}
 
 </script>
 
@@ -45,7 +57,7 @@
 					Sign in to your account
 				</h1>
 
-				<form class="space-y-4 md:space-y-6">
+				<form class="space-y-4 md:space-y-6" on:submit={() => login(email, password)}>
 					<div>
 						<label for="email" class="block mb-2 text-sm font-medium text-white"
 							>Your email</label
@@ -99,12 +111,6 @@
 						>
 					</div>
 
-					{#if noMatch}
-						<p class="text-sm font-light text-red-500 dark:text-red-400">
-							Passwords do not match
-						</p>
-					{/if}
-            
 
 					<button
 						type="submit"

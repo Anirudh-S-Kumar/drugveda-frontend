@@ -33,31 +33,6 @@
 		});
 		let data = await res.json();
 		console.log(data);
-		// fetch(`${PUBLIC_API_URL}/signup`, {
-		// 	method: 'POST',
-		// 	headers: {
-		// 		'Content-Type': 'application/json'
-		// 	},
-		// 	body: JSON.stringify({
-		// 		name,
-		// 		email,
-		// 		phone,
-		// 		password,
-		// 		lat,
-		// 		lon,
-		// 		role
-		// 	})
-		// })
-		// 	.then((res) => res.json())
-		// 	.then((data) => {
-		// 		if (data.error) {
-		// 			console.log(data.error);
-		// 		} else {
-		// 			console.log(data);
-		// 			jwtStore.set(data.jwt);
-		// 			// window.location.href = '/dashboard';
-		// 		}
-		// 	});
 	}
 		
 

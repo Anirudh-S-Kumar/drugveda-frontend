@@ -77,14 +77,11 @@
 				<div class="flex mt-6 items-center pb-5 border-b-2 border-gray-800 mb-5">
 					<div class="flex" />
 				</div>
-				<div class="flex">
+				<div class="flex justify-between">
 					<span class="title-font font-medium text-2xl text-white">₹{currentTest.price}</span>
-					<ProductButton name="Buy Now" color="teal"/>
-					<button
-						class="inline-flex items-center justify-center ml-4"
-					>
-                    <ProductButton name="Add to Cart" color="teal_outline" on:click={() => addToCart()}/>
-					</button>
+                    <a href="/checkout/lab?to=lab">
+                        <ProductButton name="Buy Now" color="teal"/>
+                    </a>
 				</div>
 
 			</div>
