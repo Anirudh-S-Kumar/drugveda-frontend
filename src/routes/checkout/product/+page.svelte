@@ -23,7 +23,7 @@
                 window.location.href = "/categories";
             }
             
-            if (jwt === null){
+            if (jwt === null || jwt === ''){
                 window.location.href = "/login";
             }
         }

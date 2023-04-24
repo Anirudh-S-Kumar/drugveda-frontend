@@ -4,6 +4,8 @@
     import type { LabTest } from "$lib/interfaces";
     import labCartStore from "$lib/labCart";
 	import SuccessAlert from '$lib/shared/alerts/SuccessAlert.svelte';
+	import { browser } from '$app/environment';
+	import { A } from 'flowbite-svelte';
 
     let cartTests: LabTest[] = [];
     onMount(() => {
@@ -17,6 +19,7 @@
     let display_alert = false;
 
     function addToCart() {
+        console.log("called");
         // adding to test cart
 
         // check if item already in cart
@@ -35,16 +38,9 @@
                 price: currentTest.price,
                 appointment: appointment
             };
-            labCartStore.update((cart) => [...cart, newItem]);
+            cartTests = [...cartTests, newItem];
+            labCartStore.set(cartTests);
         }
-
-        display_alert = true;
-        setTimeout(() => {
-            display_alert = false;
-        }, 3000);
-        
-        
-
     }
 
 </script>
@@ -79,7 +75,7 @@
 				</div>
 				<div class="flex justify-between">
 					<span class="title-font font-medium text-2xl text-white">₹{currentTest.price}</span>
-                    <a href="/checkout/lab?to=lab">
+                    <a on:click={() => {addToCart()}} href="/checkout/lab">
                         <ProductButton name="Buy Now" color="teal"/>
                     </a>
 				</div>

@@ -3,14 +3,17 @@
 	import { PUBLIC_API_URL } from "$env/static/public";
 	import jwtStore from "$lib/jwt";
 	import { onMount } from "svelte";
+	import SuccessAlert from "$lib/shared/alerts/SuccessAlert.svelte";
 	
+	export let data;
 	let jwt: string = '';
+	let display_alert = false;
 	onMount(() => {
 		jwtStore.subscribe((value) => {
 			jwt = value;
 		});
 		if (jwt != '') {
-			window.location.href = '/checkout/product';
+			window.location.href = '/';
 		}
 	});
 
@@ -19,7 +22,7 @@
 	let register:boolean = false;
 	let confirmPassword:string = '';
 	let noMatch:boolean = false;
-	
+
 
 	async function login(email: string, password: string) {
 		let role = 'customer';
@@ -33,13 +36,19 @@
 				password
 			})
 		});
-		let data = await res.json();
-		console.log(data.token);
-		if (data.status === 'success' && data.token != null) {
-			jwt = data.token;
+		let res_data = await res.json();
+		console.log(res_data.token);
+		if (res_data.status === 'success' && res_data.token != null) {
+			jwt = res_data.token;
 			jwtStore.set(jwt);
 		} else {
 			alert('Invalid credentials');
+		}
+
+		if (jwt != '') {
+			setTimeout(() => {
+				display_alert = true;
+			}, 1000);
 		}
 	}
 
@@ -128,6 +137,14 @@
 
 				</form>
 			</div>
+			{#if display_alert}
+		<SuccessAlert>
+			Login Sucessful!!!
+		</SuccessAlert>
+	{/if}
 		</div>
+		
 	</div>
+
 </section>
+

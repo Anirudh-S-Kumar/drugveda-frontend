@@ -2,6 +2,7 @@
 	import FullWidthButton from '$lib/shared/buttons/FullWidthButton.svelte';
 	import jwtStore from '$lib/jwt';
 	import { PUBLIC_API_URL } from '$env/static/public';
+	import SuccessAlert from '$lib/shared/alerts/SuccessAlert.svelte';
 
 
 
@@ -13,6 +14,7 @@
 	let noMatch: boolean = false;
     let lat: number = 0;
     let long: number = 0;
+	let display_alert: boolean = false;
 
 	async function signUp(name: string, email: string, phone: number, password: string, lat: number, lon: number) {
 		let role = 'customer';
@@ -33,6 +35,13 @@
 		});
 		let data = await res.json();
 		console.log(data);
+		if (data.status == 'success') {
+		setTimeout(() => {
+						display_alert = true;
+					}, 1000);
+		} else {
+			alert('Account creation failed');
+		}
 	}
 		
 
@@ -205,6 +214,11 @@
 					</a>
 				</p>
 			</form>
+			{#if display_alert}
+				<SuccessAlert>
+					Account Created Successfully
+				</SuccessAlert>
+			{/if}
 		</div>
 	</div>
 </section>

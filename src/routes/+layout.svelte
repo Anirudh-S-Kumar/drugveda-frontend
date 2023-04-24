@@ -7,14 +7,19 @@
     import { base } from "$app/paths";
 	import CartButton from "$lib/shared/buttons/CartButton.svelte";
     import cartStore from "$lib/cart";
+    import jwtStore from "$lib/jwt";
     import { onMount } from "svelte";
     import type { CartItem } from "$lib/interfaces.js";
     
     let cart: CartItem[] = [];
-
+    let jwt: string;
     onMount(() => {
         cartStore.subscribe((value) => {
             cart = value;
+        });
+
+        jwtStore.subscribe((value) => {
+            jwt = value;
         });
     });
 
@@ -49,12 +54,16 @@
             <TabButton href="{base}/labtests">Lab Tests</TabButton>
         </nav>
             <div class="flex space-x-4 items-center">
-                <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="{base}/login">
-                    Login</ExpandShadowButton
-                >
-                <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/signup">
-                    Signup</ExpandShadowButton
-                >
+                {#if jwt === null || jwt === ''}
+                    <ExpandShadowButton style="border-radius: 0.5rem" invert={true} href="{base}/login">
+                        Login</ExpandShadowButton
+                    >
+                    <ExpandShadowButton style="border-radius: 0.5rem" href="{base}/signup">
+                        Signup</ExpandShadowButton
+                    >
+                {/if}
+                
+                
                 <CartButton on:click={() => {sidebar_show = !sidebar_show}} qty={totalQty}/>
             </div>
     </div>

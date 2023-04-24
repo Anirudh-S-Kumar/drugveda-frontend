@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { browser } from "$app/environment";
-    import LabCheckout from "$lib/components/ProductCheckout.svelte";
+    import LabCheckout from "$lib/components/LabCheckout.svelte";
     import { onMount } from "svelte";
-    import labCart from "$lib/labCart";
+    import labCartStore from "$lib/labCart";
     import jwtStore from "$lib/jwt";
     import type { CartItem, LabTest } from "$lib/interfaces";
 
@@ -10,7 +10,7 @@
     let jwt: string = "";
 
     onMount(() => {
-        labCart.subscribe((value) => {
+        labCartStore.subscribe((value) => {
             cart = value;
         });
 
@@ -19,21 +19,21 @@
         });
 
         if (browser){
-            if (cart.length === 0){
-                window.location.href = "/labs";
-            }
-            
-            if (jwt === ""){
-                window.location.href = "/login";
+            if (jwt === null || jwt === ''){
+                window.location.href = "/login?from=lab";
             }
         }
 
     });
+
+    console.log(cart)
+    
 
 
 
 
     
 </script>
+
 
 <LabCheckout cart={cart}/>
